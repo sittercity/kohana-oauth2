@@ -45,7 +45,7 @@ abstract class Kohana_Model_OAuth2
 
 	public function __construct($params = array())
 	{
-		$this->_config = Kohana::$config->load('oauth2');
+		$this->_config = Kohana::config('oauth2');
 
 		foreach ($params as $param => $value)
 		{

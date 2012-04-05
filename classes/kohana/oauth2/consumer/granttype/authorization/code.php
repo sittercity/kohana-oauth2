@@ -36,12 +36,9 @@ abstract class Kohana_OAuth2_Consumer_GrantType_Authorization_Code extends OAuth
 				$x = (array) json_decode($response->body());
 				break;
 			case 'application/x-www-form-urlencoded': # Stupid github -_-
+			default:
 				parse_str($response->body(), $x);
 				break;
-			default:
-				throw new OAuth2_Exception_InvalidGrant('Unknown Content-Type: :content_type', array(
-					':content_type' => $response->headers('content-type'),
-				));
 		}
 
 		return $x;

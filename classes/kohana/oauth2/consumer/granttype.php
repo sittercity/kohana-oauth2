@@ -38,7 +38,7 @@ abstract class Kohana_OAuth2_Consumer_GrantType {
 
 	public function __construct($provider)
 	{
-		$this->_config = Kohana::$config->load('oauth2.consumer');
+		$this->_config = Kohana::config('oauth2.consumer');
 		$this->_provider = $provider;
 	}
 

@@ -50,7 +50,7 @@ abstract class Kohana_OAuth2_Consumer {
 	 */
 	public function __construct($provider, $token = NULL)
 	{
-		$this->_config = Kohana::$config->load('oauth2.consumer');
+		$this->_config = Kohana::config('oauth2.consumer');
 		$this->_provider = $provider;
 		$this->_grant_type = OAuth2_Consumer_GrantType::factory($this->_config[$provider]['grant_type'], $provider);
 		
